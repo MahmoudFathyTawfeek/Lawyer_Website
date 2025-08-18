@@ -99,10 +99,10 @@ const Contact = () => {
       {/* أرقام التواصل */}
       <div className="contact-info mt-4 text-center fw-bold">
         <h5>تواصل معنا مباشرة:</h5>
-        <p>📞 الهاتف: 0123456789</p>
+        <p>📞 0 122 165 3213</p>
         <p>
           📱 واتساب:{" "}
-          <a href="https://wa.me/201205116609" target="_blank" rel="noreferrer">
+          <a href="https://wa.me/20 122 165 3213" target="_blank" rel="noreferrer">
             اضغط هنا للتواصل
           </a>
         </p>
