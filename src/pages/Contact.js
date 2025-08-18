@@ -7,19 +7,39 @@ const Contact = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState("");
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("تم إرسال استشارتك القانونية بنجاح ✅");
-    // هنا يمكنك إضافة منطق الإرسال الفعلي عبر API إذا أردت
+    setStatus("جارٍ الإرسال...");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mkgzaapv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("تم إرسال استشارتك القانونية بنجاح ✅");
+        setFormData({ name: "", email: "", message: "" }); // تفريغ الحقول بعد الإرسال
+      } else {
+        setStatus("حدث خطأ ❌ حاول مرة أخرى");
+      }
+    } catch (error) {
+      setStatus("فشل الاتصال بالسيرفر ❌");
+    }
   };
 
   return (
     <div
-      className="container mt-5 text-white"
+      className="container text-white"
       style={{ paddingTop: "120px", paddingLeft: "20px", paddingRight: "20px" }}
     >
       <h2 className="mb-4 text-center text-white" style={{ fontSize: "2rem" }}>
@@ -71,17 +91,18 @@ const Contact = () => {
         </button>
       </form>
 
+      {/* رسالة حالة الإرسال */}
+      {status && (
+        <div className="alert alert-info text-center fw-bold">{status}</div>
+      )}
+
       {/* أرقام التواصل */}
       <div className="contact-info mt-4 text-center fw-bold">
         <h5>تواصل معنا مباشرة:</h5>
         <p>📞 الهاتف: 0123456789</p>
         <p>
           📱 واتساب:{" "}
-          <a
-            href="https://wa.me/201205116609"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://wa.me/201205116609" target="_blank" rel="noreferrer">
             اضغط هنا للتواصل
           </a>
         </p>
