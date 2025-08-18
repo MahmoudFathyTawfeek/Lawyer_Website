@@ -28,18 +28,22 @@ const Services = () => {
     <div
       className="py-5"
       style={{
-        background: "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216')",
+        background:
+          "linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         minHeight: "100vh",
+        paddingTop: "120px", // عشان Navbar ما يغطيش المحتوى
       }}
     >
       <div className="container">
-        <h1 className="text-center mb-5 fw-bold text-white">خدماتنا</h1>
+        <h1 className="text-center mt-5 mb-5 fw-bold text-white" style={{ fontSize: "2rem" }}>
+          خدماتنا
+        </h1>
         <div className="row g-4">
           {services.map((service, index) => (
-            <div key={index} className="col-md-6 col-lg-3">
-              <div className="card h-100 shadow border-0 text-center p-3">
+            <div key={index} className="col-12 col-md-6 col-lg-3">
+              <div className="card h-100 shadow border-0 text-center p-3 bg-white rounded-4">
                 <img
                   src={service.img}
                   className="card-img-top mx-auto"

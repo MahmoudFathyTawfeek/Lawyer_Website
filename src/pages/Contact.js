@@ -18,8 +18,13 @@ const Contact = () => {
   };
 
   return (
-    <div className="container mt-5 text-white" >
-      <h2 className="mb-4 text-center text-white">إرسال استشارة قانونية</h2>
+    <div
+      className="container mt-5 text-white"
+      style={{ paddingTop: "120px", paddingLeft: "20px", paddingRight: "20px" }}
+    >
+      <h2 className="mb-4 text-center text-white" style={{ fontSize: "2rem" }}>
+        إرسال استشارة قانونية
+      </h2>
 
       <form onSubmit={handleSubmit} className="mb-5">
         <div className="mb-3" dir="rtl">
@@ -49,9 +54,9 @@ const Contact = () => {
         </div>
 
         <div className="mb-3" dir="rtl">
-          <label className="form-label text-weight-bold" >نص الاستشارة</label>
+          <label className="form-label fw-bold">نص الاستشارة</label>
           <textarea
-            className="form-control "
+            className="form-control"
             name="message"
             rows="5"
             value={formData.message}
@@ -61,14 +66,25 @@ const Contact = () => {
           ></textarea>
         </div>
 
-        <button type="submit" className="btn btn-primary w-100">إرسال</button>
+        <button type="submit" className="btn btn-primary w-100">
+          إرسال
+        </button>
       </form>
 
       {/* أرقام التواصل */}
-      <div className="contact-info mt-4 text-center font-weight-bold">
+      <div className="contact-info mt-4 text-center fw-bold">
         <h5>تواصل معنا مباشرة:</h5>
         <p>📞 الهاتف: 0123456789</p>
-        <p>📱 واتساب: <a href="https://wa.me/20123456789" target="_blank" rel="noreferrer">اضغط هنا للتواصل</a></p>
+        <p>
+          📱 واتساب:{" "}
+          <a
+            href="https://wa.me/201205116609"
+            target="_blank"
+            rel="noreferrer"
+          >
+            اضغط هنا للتواصل
+          </a>
+        </p>
       </div>
     </div>
   );
