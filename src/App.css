@@ -1,0 +1,101 @@
+/* Reset أساسي */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navbar */
+.navbar {
+  background: #2c3e50;
+  color: white;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+  color:blue
+}
+
+/* Home */
+.home {
+  padding: 40px;
+  text-align: center;
+}
+
+.home h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+
+/* About */
+.about {
+  padding: 40px;
+}
+
+.about h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Services */
+.services {
+  padding: 40px;
+}
+
+.services h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* Contact */
+.contact {
+  padding: 40px;
+}
+
+.contact h2 {
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+/* نخلي الصفحة كلها Flex عمودي */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* نخلي الكونتنت يتمدد وياخد المساحة */
+.main-content {
+  flex: 1;
+}

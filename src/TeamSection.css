@@ -1,0 +1,112 @@
+/* TeamSection.css */
+
+/* خلفية الصفحة */
+body {
+  background-image: url('../public/bg.jpeg'); /* ضع الصورة في public */
+  background-size: cover;     
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* قسم الفريق */
+.team-section {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: transparent; /* خليها شفافة عشان تظهر الخلفية */
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #f4f3f5;
+}
+
+/* Grid مع كرتين */
+.team-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.team-card {
+  width: 250px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  background-color: rgba(255, 255, 255, 0.8); /* خلفية شفافة للكرت */
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+}
+
+.card-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.card-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(61, 4, 114, 0.7);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-weight: bold;
+}
+
+.card-img:hover img {
+  transform: scale(1.1);
+}
+
+.card-img:hover .overlay {
+  opacity: 1;
+}
+
+.team-card h3 {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+/* النص التعريفي يظهر عند hover */
+.member-description {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #555;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.team-card:hover .member-description {
+  max-height: 100px;
+  opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .team-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
