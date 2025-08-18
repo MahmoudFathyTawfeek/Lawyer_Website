@@ -31,9 +31,9 @@ const Home = () => {
         backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/bg.jpeg')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "83vh",
+        minHeight: "100vh",
         color: "white",
-        padding: "20px",
+        padding: "120px 20px 40px 20px",
         textShadow: "2px 2px 8px rgba(0,0,0,0.7)"
       }}
     >
@@ -84,7 +84,8 @@ const Home = () => {
           transition: "opacity 0.8s ease-in-out, transform 0.8s ease-in-out",
           fontSize: "1.2rem",
           maxWidth: "90%",
-          marginBottom: "30px"
+          marginBottom: "30px",
+          lineHeight: "1.4"
         }}
       >
         {quotes[currentQuote]}
@@ -96,7 +97,7 @@ const Home = () => {
           fontSize: "1.6rem",
           fontWeight: "bold",
           fontStyle: "normal",
-          maxWidth: "80%",
+          maxWidth: "90%",
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           padding: "20px",
           borderLeft: "5px solid #fff",
